@@ -1,0 +1,49 @@
+-- 
+-- Roll No: 03
+-- Name: Ahamed shadi
+-- Program: Practice Questions - II
+-- 
+
+
+--
+-- Table structure for table department
+--
+create table department(dno int, dname varchar(50),location varchar(50) DEFAULT"Main_Block",constraint department_dno_pky primary key(dno),constraint department_dname_uq unique(dname));
+
+--
+-- Table structure for table employee
+--
+create table employee(empno int,name varchar(50) NOT NULL,gender char(1),salary DECIMAL(7,2),email varchar(100),dno int,constraint employee_empno_pky primary key(empno),constraint employee_salary_check check(salary>0),constraint employee_email_uq unique(email));
+
+-- ---------create/alter statement commands----------- # This line may be removed in the actual file
+
+--
+-- Dumping data for table department
+--
+
+-- --------insert/update statement commands----------- # This line may be removed in the actcual file
+insert into department values(10,"HR","Block_A"),(20,"Sales","Block_B"),(30,"IT","Block_C"),(40,"Administration","Block_D"),(50,"Finance","Block_E");
+
+update department set location="Block_G" where dname="Sales";
+
+--
+--
+-- Dumping data for table employee
+--
+
+-- --------insert/update statement commands----------- # This line may be removed in the actcual file
+insert into employee values(1,"Alice","F",30000,"alice@gmail.com",10);
+insert into employee values(2,"Bob","M",40000,"bob@gmail.com",20);
+insert into employee values(3,"Charlie","M",45000,"charlie@gmail.com",30),(4,"David","M" 35000,"david@gmail.com",40);
+insert into employee values(5,"Suzanne","F",50000,"suzanne@gmail.com",50);
+
+update employee set salary = salary*1.10;
+Delete FROM employee where salary<35000;
+update employee set salary=salary+5000 where dno=30 and salary<50000;
+
+--
+-- SQl Query Statements
+--
+
+-- -----SQL query statments preceeded by the its question-------- # This line may be removed in the actual file
+-- -----Question number should be commented---------------#This line may be removed in the actual file
